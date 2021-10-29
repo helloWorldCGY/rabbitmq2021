@@ -30,7 +30,7 @@ public class Producer {
              * 1.发送到那个交换机
              * 2.路由的 key 是哪个 本次是队列的名称
              * 3.其他的参数信息
-             * 4.发送消息的消息体
+             * 4.发送消息的消息体,以二进制传输
              */
             channel.basicPublish("",QUEUE_NAME,null,message.getBytes());
             System.out.println("消息发送完毕");
