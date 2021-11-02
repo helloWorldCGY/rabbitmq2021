@@ -6,6 +6,7 @@ import com.rabbitmq.client.Channel;
 import java.util.Scanner;
 
 public class EmitLog {
+    //交换机的名称
     private static final String EXCHANGE_NAME = "logs";
     public static void main(String[] argv) throws Exception {
         try (Channel channel = RabbitMqUtils.getChannel()) {
