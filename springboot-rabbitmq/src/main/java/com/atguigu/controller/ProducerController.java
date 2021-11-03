@@ -25,6 +25,10 @@ public class ProducerController {
     @PostConstruct
     public void init(){
         rabbitTemplate.setConfirmCallback(myCallBack);
+        rabbitTemplate.setMandatory(true);
+        //设置回退消息交给谁处理
+        rabbitTemplate.setReturnsCallback(myCallBack);
+//        rabbitTemplate.setReturnCallback(myCallBack);
     }
     @GetMapping("sendMessage/{message}")
     public void sendMessage(@PathVariable String message){
